@@ -1,4 +1,6 @@
 <h1><%= t :sunflower %></h1>
-<%= link_to_if user_signed_in?, t(:sign_out), destroy_user_session_path, method: :delete do %>
-  <%= link_to t(:sign_in), new_user_session_path %>
+
+<%= link_to_unless user_signed_in?, t(:sign_in), new_user_session_path  do %>
+  <%= current_user.name %>
+  <%= link_to t(:sign_out), destroy_user_session_path, method: :delete %>
 <% end %>
