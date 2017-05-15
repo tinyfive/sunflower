@@ -34,6 +34,7 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'devise', '~> 4.3'
 gem 'administrate'
+gem 'simple_form'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  gender: 1
+  birth_certificated: false
+  id_type: 1
+  id_number: MyString
+  birthday: 2017-05-15
+  remark: MyText
+
+two:
+  name: MyString
+  gender: 1
+  birth_certificated: false
+  id_type: 1
+  id_number: MyString
+  birthday: 2017-05-15
+  remark: MyText
