@@ -1,0 +1,13 @@
+<div class="col-sm-3 col-md-2 sidebar">
+  <ul class="nav nav-sidebar">
+    <li class="active">
+      <%= link_to applies_path do %>
+        <%= t('.applies') %>
+        <span class="sr-only">(current)</span>
+      <% end %>
+    </li>
+  </ul>
+  <ul class="nav nav-sidebar">
+    <li><%= link_to t('.admin'), admin_root_path %></li>
+  </ul>
+</div>

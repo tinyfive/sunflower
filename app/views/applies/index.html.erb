@@ -1,1 +1,15 @@
-<%= render 'layouts/header' %>
+<table class="table">
+  <thead>
+    <tr>
+      <% %i[name].each do |field| %>
+        <th><%= Patient.human_attribute_name field %></th>
+      <% end %>
+      <% %i[disease estimate_discharge_at].each do |field| %>
+        <th><%= Apply.human_attribute_name field %></th>
+      <% end %>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render partial: 'apply', collection: @applies %>
+  </tbody>
+</table>
