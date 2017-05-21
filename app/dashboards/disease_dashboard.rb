@@ -1,6 +1,6 @@
 require "administrate/base_dashboard"
 
-class OrganizationDashboard < Administrate::BaseDashboard
+class DiseaseDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -8,10 +8,9 @@ class OrganizationDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    users: Field::HasMany,
     id: Field::Number,
     name: Field::String,
-    category: Field::String.with_options(searchable: false),
+    creator: Field::BelongsTo.with_options(class_name: 'User'),
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -22,19 +21,17 @@ class OrganizationDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
-    :users,
     :id,
     :name,
-    :category,
+    :creator,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
-    :users,
     :id,
     :name,
-    :category,
+    :creator,
     :created_at,
     :updated_at,
   ].freeze
@@ -43,15 +40,14 @@ class OrganizationDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    :users,
     :name,
-    :category,
+    :creator,
   ].freeze
 
-  # Overwrite this method to customize how organizations are displayed
+  # Overwrite this method to customize how diseases are displayed
   # across all pages of the admin dashboard.
   #
-  def display_resource(organization)
-    "#{organization.name}"
-  end
+  # def display_resource(disease)
+  #   "Disease ##{disease.id}"
+  # end
 end

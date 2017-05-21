@@ -1,4 +1,4 @@
-<%= simple_form_for apply do |f| %>
+<%= simple_form_for apply, html: {class: ''} do |f| %>
   <%= f.input :archive_number %>
   <%= f.simple_fields_for :patient do |ff| %>
     <%= ff.input :name %>
@@ -19,5 +19,5 @@
   <%= f.input :hospital_advice_amount %>
   <%= f.input :estimate_discharge_at %>
   <%= f.input :reason %>
-  <%= f.submit %>
+  <%= f.button :submit, class: 'btn-primary' %>
 <% end %>
