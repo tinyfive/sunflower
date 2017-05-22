@@ -1,4 +1,7 @@
+
 # README
+
+[![CircleCI](https://circleci.com/gh/tinyfive/sunflower.svg?style=svg)](https://circleci.com/gh/tinyfive/sunflower)
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
