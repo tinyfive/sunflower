@@ -1,0 +1,11 @@
+zh-CN:
+  activerecord:
+    models:
+      disease: 疾病
+    attributes:
+      disease:
+        name: 疾病
+        creator: 创建人
+        creator_id: 创建人
+        created_at: 创建时间
+        updated_at: 更新时间

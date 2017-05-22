@@ -1,0 +1,20 @@
+zh-CN:
+  sunflower: 向阳花公益基金
+  sign_in: 登录
+  sign_out: 退出
+
+  edit: 编辑
+  destroy: 删除
+
+  layouts:
+    sidebar:
+      applies: 申请列表
+      admin: 管理后台
+
+  applies:
+    index:
+      new_apply: 新建申请
+    form:
+      fieldset:
+        patient: 患儿基本信息
+        apply: 申请

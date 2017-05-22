@@ -36,6 +36,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise', '~> 4.3'
 gem 'administrate'
 gem 'simple_form'
+gem 'rails-i18n'
+gem 'pundit'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -52,6 +54,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'annotate', github: 'ctran/annotate_models', branch: :master
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

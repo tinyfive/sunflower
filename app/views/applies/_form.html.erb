@@ -1,23 +1,30 @@
-<%= simple_form_for apply, html: {class: ''} do |f| %>
-  <%= f.input :archive_number %>
-  <%= f.simple_fields_for :patient do |ff| %>
-    <%= ff.input :name %>
-    <%= ff.input :gender, as: :radio_buttons, collection: enum_options_for_select(Patient, :gender) %>
-    <%= ff.input :birth_certificated %>
-    <%= ff.input :id_type, as: :radio_buttons, collection: enum_options_for_select(Patient, :id_type) %>
-    <%= ff.input :id_number %>
-    <%= ff.input :birthday, start_year: Patient::BIRTHDAY_START_YEAR, end_year: Patient::BIRTHDAY_END_YEAR %>
-    <%= ff.input :remark %>
+<%= simple_form_for apply, html: {class: 'form-horizontal'},
+  wrapper: :horizontal_form do |f| %>
+  <%# f.input :archive_number %>
+  <%= field_set_tag t('.fieldset.patient') do %>
+    <%= f.simple_fields_for :patient do |ff| %>
+      <%= ff.input :name %>
+      <%= ff.input :gender, as: :radio_buttons, wrapper: :horizontal_radio_and_checkboxes, collection: enum_options_for_select(Patient, :gender) %>
+      <%= ff.input :birth_certificated, wrapper: :horizontal_boolean %>
+      <%= ff.input :id_type, as: :radio_buttons, wrapper: :horizontal_radio_and_checkboxes, collection: enum_options_for_select(Patient, :id_type) %>
+      <%= ff.input :id_number %>
+      <%= ff.input :birthday, start_year: Patient::BIRTHDAY_START_YEAR, end_year: Patient::BIRTHDAY_END_YEAR %>
+      <%= ff.input :remark %>
+    <% end %>
   <% end %>
-  <%= f.input :once_applied %>
-  <%= f.input :once_applied_remark %>
-  <%= f.input :insured %>
-  <%= f.input :commercial_insured %>
-  <%= f.association :hospital %>
-  <%= f.input :expense_amount %>
-  <%= f.input :affordable_amount %>
-  <%= f.input :hospital_advice_amount %>
-  <%= f.input :estimate_discharge_at, start_year: Apply::ESTIMATE_DISCHARGE_START_YEAR, end_year: Apply::ESTIMATE_DISCHARGE_END_YEAR %>
-  <%= f.input :reason %>
+
+  <%= field_set_tag t('.fieldset.apply') do %>
+    <%= f.input :once_applied %>
+    <%= f.input :once_applied_remark %>
+    <%= f.input :insured %>
+    <%= f.input :commercial_insured %>
+    <%= f.association :hospital, include_blank: false, selected: current_user.organization %>
+    <%= f.input :expense_amount %>
+    <%= f.input :affordable_amount %>
+    <%= f.input :hospital_advice_amount %>
+    <%= f.input :estimate_discharge_at, start_year: Apply::ESTIMATE_DISCHARGE_START_YEAR, end_year: Apply::ESTIMATE_DISCHARGE_END_YEAR %>
+    <%= f.input :reason %>
+  <% end %>
+
   <%= f.button :submit, class: 'btn-primary' %>
 <% end %>

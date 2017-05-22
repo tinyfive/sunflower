@@ -1,12 +1,15 @@
-<table class="table">
+<%= link_to t('.new_apply'), new_apply_path, class: 'btn btn-success' %>
+
+<table class="table table-hover table-striped">
   <thead>
     <tr>
       <% %i[name].each do |field| %>
         <th><%= Patient.human_attribute_name field %></th>
       <% end %>
-      <% %i[disease estimate_discharge_at].each do |field| %>
+      <% %i[hospital estimate_discharge_at].each do |field| %>
         <th><%= Apply.human_attribute_name field %></th>
       <% end %>
+      <th class="text-right"></th>
     </tr>
   </thead>
   <tbody>

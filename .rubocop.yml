@@ -1,0 +1,24 @@
+AllCops:
+  TargetRubyVersion: 2.3
+
+Lint/AssignmentInCondition:
+  enabled: false
+
+Metrics/LineLength:
+  Max: 120
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/TrailingCommaInLiteral:
+  Enabled: false
+
+Style/EmptyMethod:
+  Enabled: false
+
+Style/AsciiComments:
+  Enabled: false
+

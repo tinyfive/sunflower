@@ -1,0 +1,13 @@
+zh-CN:
+  activerecord:
+    models:
+      patient: 患儿
+    attributes:
+      patient:
+        name: 姓名
+        gender: 性别
+        birth_certificated: 有出生证明
+        id_type: ID 类型
+        id_number: ID 号
+        birthday: 生日
+        remark: 备注

@@ -1,0 +1,16 @@
+zh-CN:
+  activerecord:
+    models:
+      user: 用户
+    attributes:
+      user:
+        name: 名称
+        organization: 组织
+        organization_id: 组织
+        mobile: 手机号
+        role: 角色
+        email: 邮箱
+        password: 密码
+        password_confirmation:  确认密码
+        created_at: 创建时间
+        updated_at: 更新时间

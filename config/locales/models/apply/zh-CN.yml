@@ -1,0 +1,25 @@
+zh-CN:
+  activerecord:
+    models:
+      apply: 申请
+    attributes:
+      apply:
+        patient: 患儿
+        patient_id: 患儿
+        creator: 创建人
+        creator_id: 创建人
+        archive_number: 编号
+        status: 状态
+        insured: 有医保
+        commercial_insured: 有商业保险
+        hospital: 医院
+        hospital_id: 医院
+        expense_amount: 预计总费用
+        affordable_amount: 家庭可承担费用
+        hospital_advice_amount: 医院建议资助金额
+        estimate_discharge_at: 预计出院日期
+        reason: 情况介绍
+        once_applied: 以前申请过
+        once_applied_remark: 申请情况说明（时间、批次、金额）
+        created_at: 创建日期
+        updated_at: 修改日期
