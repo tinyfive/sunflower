@@ -5,7 +5,7 @@
 #  id                 :integer          not null, primary key
 #  name               :string(255)
 #  gender             :integer          default("male")
-#  birth_certificated :boolean
+#  birth_certificated :boolean          default(FALSE)
 #  id_type            :integer          default("id_card")
 #  id_number          :string(255)
 #  birthday           :date
@@ -23,6 +23,6 @@ class Patient < ApplicationRecord
 
   has_many :applies
 
-  validates_presence_of :name, :gender
+  validates_presence_of :name, :birthday
   validates_presence_of :id_type, :id_number, if: :birth_certificated
 end

@@ -12,7 +12,10 @@
 require 'test_helper'
 
 class DiseaseTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test 'validate presence' do
+    disease = Disease.new
+    assert_not disease.valid?
+    assert_includes disease.errors.keys, :name
+    assert_includes disease.errors.keys, :creator
+  end
 end
