@@ -24,9 +24,28 @@
 require 'test_helper'
 
 class AppliesControllerTest < ActionDispatch::IntegrationTest
-  test "should get index" do
-    get applies_index_url
+  attr_reader :apply
+
+  def setup
+    sign_in users(:admin)
+    @apply = applies(:one)
+  end
+
+  test 'should get index' do
+    get applies_url
     assert_response :success
   end
 
+  test 'should get show' do
+    get apply_url(apply)
+    assert_response :success
+  end
+
+  test 'should get new' do
+    get new_apply_url
+    assert_response :success
+  end
+
+  test 'should get create' do
+  end
 end

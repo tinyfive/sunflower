@@ -9,12 +9,18 @@
 #  updated_at :datetime         not null
 #
 
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+hospital:
+  name: Zhejiang Hospital
+  category: 0
 
-one:
-  name: MyString
+volunteer:
+  name: sunflower
   category: 1
 
-two:
-  name: MyString
-  category: 1
+radio:
+  name: Dongting
+  category: 2
+
+fund:
+  name: Qingjihui
+  category: 3
