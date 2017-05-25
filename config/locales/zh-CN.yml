@@ -15,6 +15,7 @@ zh-CN:
     index:
       new_apply: 新建申请
     form:
+      add_social_relation: 添加社会关系
       fieldset:
         patient: 患儿基本信息
         apply: 申请

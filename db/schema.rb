@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170522045654) do
+ActiveRecord::Schema.define(version: 20170525043325) do
 
   create_table "applies", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "patient_id"
@@ -56,6 +56,18 @@ ActiveRecord::Schema.define(version: 20170522045654) do
     t.text     "remark",             limit: 65535
     t.datetime "created_at",                                       null: false
     t.datetime "updated_at",                                       null: false
+  end
+
+  create_table "social_relations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "relationship",                 default: 0, null: false
+    t.string   "name"
+    t.string   "tel"
+    t.string   "employer"
+    t.string   "employer_tel"
+    t.decimal  "income_amount", precision: 10
+    t.integer  "patient_id",                               null: false
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

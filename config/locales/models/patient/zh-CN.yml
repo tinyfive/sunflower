@@ -11,3 +11,12 @@ zh-CN:
         id_number: ID 号
         birthday: 生日
         remark: 备注
+      patient/gender:
+        male: 男
+        female: 女
+      patient/birth_certificated:
+        'true': 有
+        'false': 没有
+      patient/id_type:
+        id_card: 身份证
+        passport: 护照

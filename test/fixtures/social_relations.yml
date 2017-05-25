@@ -1,0 +1,22 @@
+# == Schema Information
+#
+# Table name: social_relations
+#
+#  id            :integer          not null, primary key
+#  relationship  :integer          default("father"), not null
+#  name          :string(255)
+#  tel           :string(255)
+#  employer      :string(255)
+#  employer_tel  :string(255)
+#  income_amount :decimal(10, )
+#  patient_id    :integer          not null
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#
+
+father:
+  patient: one
+  relationship: 'father'
+  name: 'zhengri'
+  employer: 'Korean'
+  income_amount: 3000.00

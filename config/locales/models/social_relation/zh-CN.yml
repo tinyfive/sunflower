@@ -1,0 +1,17 @@
+zh-CN:
+  activerecord:
+    models:
+      social_relation: 社会关系
+    attributes:
+      social_relation:
+        patient: 患儿
+        relationship: 关系
+        name: 姓名
+        tel: 电话
+        employer: 工作单位
+        employer_tel: 工作单位电话
+        income_amount: 月收入
+      social_relation/relationship:
+        father: 父亲
+        mother: 母亲
+        emergency_contact: 紧急联系人

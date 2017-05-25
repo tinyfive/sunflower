@@ -38,6 +38,7 @@ gem 'administrate'
 gem 'simple_form'
 gem 'rails-i18n'
 gem 'pundit'
+gem 'cocoon', '~> 1.2.10'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -45,6 +46,9 @@ gem 'pundit'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+
+  gem 'pry-rails'
+  gem 'pry-remote'
 end
 
 group :development do
