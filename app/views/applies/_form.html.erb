@@ -11,20 +11,32 @@
       <%= ff.input :birthday, start_year: Patient::BIRTHDAY_START_YEAR, end_year: Patient::BIRTHDAY_END_YEAR %>
       <%= ff.input :remark %>
 
-      <%= ff.simple_fields_for :social_relations do |fff| %>
-        <%= render 'social_relation_fields', f: fff %>
+      <%= ff.input :social_relations do %>
+        <%= ff.simple_fields_for :social_relations do |fff| %>
+          <%= render 'social_relation_fields', f: fff %>
+        <% end %>
+        <div class="add-social-relation-wrapper">
+          <%= link_to_add_association t('.add_social_relation'), ff, :social_relations, class: 'btn btn-primary btn-sm' %>
+        </div>
       <% end %>
-      <div class="links">
-        <%= link_to_add_association t('.add_social_relation'), ff, :social_relations %>
-      </div>
     <% end %>
   <% end %>
 
   <%= field_set_tag t('.fieldset.apply') do %>
-    <%= f.input :once_applied %>
-    <%= f.input :once_applied_remark %>
-    <%= f.input :insured %>
-    <%= f.input :commercial_insured %>
+    <%= f.input :once_applied, wrapper: :horizontal_input_group do %>
+      <div class="input-group-addon">
+        <%= f.input_field :once_applied, label: false, boolean_style: :inline %>
+      </div>
+      <%= f.input_field :once_applied_remark, class: 'form-control', placeholder: f.object.class.human_attribute_name(:once_applied_remark) %>
+    <% end %>
+    <%= f.input :insurance do %>
+      <div class="checkbox">
+        <%= f.input_field :insured, inline_label: f.object.class.human_attribute_name(:insured) %>
+      </div>
+      <div class="checkbox">
+        <%= f.input_field :commercial_insured, inline_label: f.object.class.human_attribute_name(:commercial_insured) %>
+      </div>
+    <% end %>
     <%= f.association :hospital, include_blank: false, selected: current_user.organization %>
     <%= f.input :expense_amount, wrapper: :horizontal_input_group do %>
       <span class="input-group-addon">&yen;</span>
@@ -42,5 +54,9 @@
     <%= f.input :reason %>
   <% end %>
 
-  <%= f.button :submit, class: 'btn-primary' %>
+  <div class="form-group">
+    <div class="col-sm-offset-3 col-sm-9 col-md-10 col-md-offset-2">
+      <%= f.button :submit, class: 'btn-primary btn-lg' %>
+    </div>
+  </div>
 <% end %>

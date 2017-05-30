@@ -23,3 +23,5 @@ zh-CN:
         once_applied_remark: 申请情况说明（时间、批次、金额）
         created_at: 创建日期
         updated_at: 修改日期
+
+        insurance: 保险

@@ -11,6 +11,8 @@ zh-CN:
         id_number: ID 号
         birthday: 生日
         remark: 备注
+
+        social_relations: 社会关系 
       patient/gender:
         male: 男
         female: 女

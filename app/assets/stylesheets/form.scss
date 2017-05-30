@@ -1,0 +1,11 @@
+.form-group {
+  &.decimal .input-group,
+  &.select .form-control,
+  &.string .form-control {
+    max-width: 300px;
+  }
+
+  &.text .form-control {
+    max-width: 500px;
+  }
+}
