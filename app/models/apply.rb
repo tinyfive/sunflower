@@ -27,6 +27,7 @@ class Apply < ApplicationRecord
 
   belongs_to :patient
   belongs_to :hospital, -> { where(category: :hospital) }, foreign_key: :hospital_id, class_name: Organization.name
+  has_many :approves
 
   accepts_nested_attributes_for :patient, allow_destroy: false, limit: 1
 

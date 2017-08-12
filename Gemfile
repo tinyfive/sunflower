@@ -40,6 +40,9 @@ gem 'rails-i18n'
 gem 'pundit'
 gem 'cocoon', '~> 1.2.10'
 
+# deployment
+gem 'mina', '~> 1.0.6'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170525043325) do
+ActiveRecord::Schema.define(version: 20170811214312) do
 
   create_table "applies", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "patient_id"
@@ -29,6 +29,14 @@ ActiveRecord::Schema.define(version: 20170525043325) do
     t.string   "once_applied_remark"
     t.datetime "created_at",                                          null: false
     t.datetime "updated_at",                                          null: false
+  end
+
+  create_table "approves", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "creator_id"
+    t.text     "remark",     limit: 65535
+    t.decimal  "aid_amount",               precision: 10
+    t.datetime "created_at",                              null: false
+    t.datetime "updated_at",                              null: false
   end
 
   create_table "diseases", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -68,6 +76,13 @@ ActiveRecord::Schema.define(version: 20170525043325) do
     t.integer  "patient_id",                               null: false
     t.datetime "created_at",                               null: false
     t.datetime "updated_at",                               null: false
+  end
+
+  create_table "table_tests", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.float   "lng_bak", limit: 24
+    t.float   "lat_bak", limit: 24
+    t.decimal "lng",                precision: 10, scale: 6
+    t.decimal "lat",                precision: 10, scale: 6
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
