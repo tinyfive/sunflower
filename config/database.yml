@@ -50,5 +50,5 @@ test:
 production:
   <<: *default
   database: sunflower_production
-  username: sunflower
+  # username: sunflower
   password: <%= ENV['SUNFLOWER_DATABASE_PASSWORD'] %>
