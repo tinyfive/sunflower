@@ -7,4 +7,9 @@ zh-CN:
         name: 组织名称
         category: 组织类型
         created_at: 创建时间
-        updated_at: 更新时间 
+        updated_at: 更新时间
+      organization/category:
+        hospital: 医院
+        volunteer: 志愿者
+        radio: 电台
+        fund: 青基会

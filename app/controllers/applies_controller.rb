@@ -38,7 +38,7 @@ class AppliesController < ApplicationController
     build_apply
     if @apply.save
       # flash[:success] = "Welcome to the Sample App!"
-      redirect_to @apply
+      redirect_to applies_path
     else
       render :new
     end

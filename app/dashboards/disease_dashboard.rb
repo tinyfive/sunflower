@@ -10,7 +10,6 @@ class DiseaseDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     id: Field::Number,
     name: Field::String,
-    creator: Field::BelongsTo.with_options(class_name: 'User'),
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -23,7 +22,6 @@ class DiseaseDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :id,
     :name,
-    :creator,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -31,7 +29,6 @@ class DiseaseDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = [
     :id,
     :name,
-    :creator,
     :created_at,
     :updated_at,
   ].freeze
@@ -41,7 +38,6 @@ class DiseaseDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
     :name,
-    :creator,
   ].freeze
 
   # Overwrite this method to customize how diseases are displayed

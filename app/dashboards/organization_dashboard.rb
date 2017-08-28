@@ -11,7 +11,7 @@ class OrganizationDashboard < Administrate::BaseDashboard
     users: Field::HasMany,
     id: Field::Number,
     name: Field::String,
-    category: Field::String.with_options(searchable: false),
+    category: Field::Select.with_options(collection: Organization.categories.map {|k, v| k}, searchable: false),
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze

@@ -31,7 +31,7 @@ class Apply < ApplicationRecord
 
   accepts_nested_attributes_for :patient, allow_destroy: false, limit: 1
 
-  delegate :name, to: :hospital, prefix: true
+  delegate :name, to: :hospital, prefix: true, allow_nil: true
 
   validates_presence_of :patient, :hospital
 end
