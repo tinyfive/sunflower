@@ -15,7 +15,7 @@ default: &default
   pool: 5
   username: root
   password: likeadamnshit
-  socket: /tmp/mysql.sock
+  # socket: /tmp/mysql.sock
 
 development:
   <<: *default
@@ -51,4 +51,5 @@ production:
   <<: *default
   database: sunflower_production
   # username: sunflower
-  password: <%= ENV['SUNFLOWER_DATABASE_PASSWORD'] %>
+  # password: <%= ENV['SUNFLOWER_DATABASE_PASSWORD'] %>
+  password: aerosmith

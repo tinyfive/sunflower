@@ -41,9 +41,12 @@ gem 'rails-i18n'
 gem 'pundit'
 gem 'cocoon', '~> 1.2.10'
 gem 'figaro'
+gem 'unicorn'
+
 
 # deployment
 gem 'mina', '~> 1.0.6'
+gem 'mina-unicorn', '~> 1.0.1', require: false
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
