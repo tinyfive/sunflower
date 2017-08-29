@@ -3,6 +3,12 @@
   <h1>申请列表</h1>
 </div>
 
+<%= search_form_for @q do |f| %>
+  <%= f.label :patient_name_or_patient_social_relations_name_cont %>
+  <%= f.search_field :patient_name_or_patient_social_relations_name_cont %>
+  <%= f.submit %>
+<% end %>
+
 <table class="table table-hover table-striped">
   <thead>
     <tr>

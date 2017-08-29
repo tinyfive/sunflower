@@ -42,6 +42,7 @@ gem 'pundit'
 gem 'cocoon', '~> 1.2.10'
 gem 'figaro'
 gem 'unicorn'
+gem 'ransack', '~> 1.8.3'
 
 
 # deployment

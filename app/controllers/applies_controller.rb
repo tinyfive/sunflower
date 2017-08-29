@@ -48,7 +48,8 @@ class AppliesController < ApplicationController
 
   def load_applies
     # TODO: policy_scope
-    @applies = Apply.includes(:patient, :hospital)
+    @q = Apply.ransack(params[:q])
+    @applies = @q.result.includes(:patient, :hospital)
   end
 
   def load_apply
