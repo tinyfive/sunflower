@@ -10,5 +10,5 @@
 #
 
 class Disease < ApplicationRecord
-  validates_presence_of :name, :creator
+  validates_presence_of :name
 end

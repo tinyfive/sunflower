@@ -22,9 +22,9 @@ class Patient < ApplicationRecord
   enum gender: { male: 0, female: 1 }
 
   has_many :applies
-  has_many :social_relations
+  has_many :social_relations, inverse_of: :patient
 
-  accepts_nested_attributes_for :social_relations, allow_destroy: false, limit: 1, reject_if: :all_blank
+  accepts_nested_attributes_for :social_relations, allow_destroy: true, reject_if: :all_blank
 
   validates_presence_of :name, :birthday
   validates_presence_of :id_type, :id_number, if: :birth_certificated

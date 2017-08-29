@@ -21,7 +21,17 @@ zh-CN:
         reason: 情况介绍
         once_applied: 以前申请过
         once_applied_remark: 申请情况说明（时间、批次、金额）
+        once_applied_remark_short: 申请情况说明
         created_at: 创建日期
         updated_at: 修改日期
 
         insurance: 保险
+      apply/once_applied:
+        'true': 申请过
+        'false': 没有申请过
+      apply/insured:
+        'true': 有
+        'false': 没有
+      apply/commercial_insured:
+        'true': 有
+        'false': 没有

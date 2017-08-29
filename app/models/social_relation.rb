@@ -16,7 +16,7 @@
 
 class SocialRelation < ApplicationRecord
   enum relationship: { father: 0, mother: 1, emergency_contact: 99 }
-  belongs_to :patient
+  belongs_to :patient, inverse_of: :social_relations
 
-  validates_presence_of :name, :patient_id
+  validates_presence_of :name, :patient
 end

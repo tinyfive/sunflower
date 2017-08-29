@@ -1,3 +1,4 @@
+.page-applies-create,
 .page-applies-new {
   .apply_patient_social_relations .nested-fields {
     padding: 20px 40px 20px 20px;
@@ -40,5 +41,16 @@
 
   .apply_once_applied .form-control {
     max-width: 600px;
+  }
+}
+
+.page-applies-show {
+  .list-group-item {
+    display: flex;
+
+    .field-name {
+      flex: 0 0 auto;
+      width: 200px;
+    }
   }
 }

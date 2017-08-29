@@ -1,1 +1,72 @@
-<%= @apply.patient.name %>
+<div class="page-header">
+  <h1>申请单</h1>
+</div>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    患儿信息
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <% %i[name gender birth_certificated id_number birthday remark].each do |field| %>
+          <th><%= Patient.human_attribute_name field %></th>
+        <% end %>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= @apply.patient.name %></td>
+        <td><%= Patient.human_attribute_name("gender.#{@apply.patient.gender}") %></td>
+        <td><%= Patient.human_attribute_name("birth_certificated.#{@apply.patient.birth_certificated}") %></td>
+        <td><%= @apply.patient.id_number %></td>
+        <td><%= l @apply.patient.birthday if @apply.patient.birthday.present? %></td>
+        <td><%= @apply.patient.remark %></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    社会关系
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <% %i[relationship name tel employer employer_tel income_amount].each do |field| %>
+          <th><%= SocialRelation.human_attribute_name field %></th>
+        <% end %>
+      </tr>
+    </thead>
+    <tbody>
+      <% @apply.patient.social_relations.each do |relation| %>
+        <tr>
+          <td><%= SocialRelation.human_attribute_name("relationship.#{relation.relationship}") %></td>
+          <td><%= relation.name %></td>
+          <td><%= relation.tel %></td>
+          <td><%= relation.employer %></td>
+          <td><%= relation.employer_tel %></td>
+          <td><%= relation.income_amount %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    申请情况
+  </div>
+  <ul class="list-group">
+    <li class="list-group-item"><span class="field-name"><%= Apply.human_attribute_name :once_applied %></span><%= Apply.human_attribute_name("once_applied.#{@apply.once_applied}") %></li>
+    <li class="list-group-item"><span class="field-name"><%= Apply.human_attribute_name :once_applied_remark_short %></span><%= @apply.once_applied_remark %></li>
+    <li class="list-group-item"><span class="field-name"><%= Apply.human_attribute_name :insured %></span><%= Apply.human_attribute_name("insured.#{@apply.insured}") %></li>
+    <li class="list-group-item"><span class="field-name"><%= Apply.human_attribute_name :commercial_insured %></span><%= Apply.human_attribute_name("commercial_insured.#{@apply.commercial_insured}") %></li>
+    <li class="list-group-item"><span class="field-name"><%= Apply.human_attribute_name :hospital %></span><%= @apply.hospital.name %></li>
+    <li class="list-group-item"><span class="field-name"><%= Apply.human_attribute_name :expense_amount %></span><%= @apply.expense_amount %></li>
+    <li class="list-group-item"><span class="field-name"><%= Apply.human_attribute_name :affordable_amount %></span><%= @apply.affordable_amount %></li>
+    <li class="list-group-item"><span class="field-name"><%= Apply.human_attribute_name :hospital_advice_amount %></span><%= @apply.hospital_advice_amount %></li>
+    <li class="list-group-item"><span class="field-name"><%= Apply.human_attribute_name :estimate_discharge_at %></span><%= l @apply.estimate_discharge_at if @apply.estimate_discharge_at.present? %></li>
+    <li class="list-group-item"><span class="field-name"><%= Apply.human_attribute_name :reason %></span><%= @apply.reason %></li>
+  </ul>
+</div>

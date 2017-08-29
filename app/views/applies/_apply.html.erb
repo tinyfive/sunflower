@@ -3,6 +3,9 @@
   <td><%= apply.hospital_name %></td>
   <td><%= l apply.estimate_discharge_at %></td>
   <td class="text-right">
+    <% if policy(apply).show? %>
+      <%= link_to t(:show), apply_path(apply) %>
+    <% end %>
     <% if policy(apply).edit? %>
       <%= link_to t(:edit), edit_apply_path(apply) %>
     <% end %>

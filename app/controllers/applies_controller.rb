@@ -38,7 +38,7 @@ class AppliesController < ApplicationController
     build_apply
     if @apply.save
       # flash[:success] = "Welcome to the Sample App!"
-      redirect_to applies_path
+      redirect_to apply_path(@apply)
     else
       render :new
     end
@@ -66,7 +66,10 @@ class AppliesController < ApplicationController
       :archive_number, :once_applied, :once_applied_remark, :insured,
       :commercial_insured, :hospital_id, :expense_amount, :affordable_amount,
       :hospital_advice_amount, :estimate_discharge_at, :reason,
-      patient_attributes: [:name, :gender, :birth_certificated, :birthday, :id_type, :id_number, :remark]
+      patient_attributes: [
+        :id, :_destroy, :name, :gender, :birth_certificated, :birthday, :id_type, :id_number, :remark,
+        social_relations_attributes: [:id, :_destroy, :relationship, :name, :tel, :employer, :employer_tel, :income_amount]
+      ],
     ]
   end
 end
