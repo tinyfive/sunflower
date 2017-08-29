@@ -43,6 +43,7 @@ gem 'cocoon', '~> 1.2.10'
 gem 'figaro'
 gem 'unicorn'
 gem 'ransack', '~> 1.8.3'
+gem 'bootstrap-datepicker-rails', '~> 1.7.1.1'
 
 
 # deployment

@@ -15,5 +15,10 @@
 //= require turbolinks
 //= // require bootstrap-sprockets
 //= require bootstrap
+//= require bootstrap-datepicker/core
+//= require bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.js
 //= require cocoon
 //= require_tree .
+//= require_self
+
+$.fn.datepicker.defaults.format = "yyyy-mm-dd";

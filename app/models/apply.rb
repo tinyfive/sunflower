@@ -34,4 +34,8 @@ class Apply < ApplicationRecord
   delegate :name, to: :hospital, prefix: true, allow_nil: true
 
   validates_presence_of :patient, :hospital
+
+  ransacker :created_at, type: :date do
+    Arel.sql('date(created_at)')
+  end
 end
