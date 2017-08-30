@@ -10,8 +10,5 @@
     <% if policy(apply).edit? %>
       <%= link_to t(:edit), edit_apply_path(apply) %>
     <% end %>
-    <% if policy(apply).destroy? %>
-      <%= link_to t(:destroy), apply_path(apply), method: :delete, class: 'text-danger' %>
-    <% end %>
   </td>
 </tr>

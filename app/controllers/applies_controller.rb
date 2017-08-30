@@ -37,10 +37,35 @@ class AppliesController < ApplicationController
   def create
     build_apply
     if @apply.save
-      # flash[:success] = "Welcome to the Sample App!"
+      flash[:success] = '添加成功！'
       redirect_to apply_path(@apply)
     else
       render :new
+    end
+  end
+
+  def edit
+    load_apply
+  end
+
+  def update
+    load_apply
+    build_apply
+    if @apply.save
+      flash[:success] = '修改成功！'
+      redirect_to apply_path(@apply)
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    load_apply
+    if @apply.destroy
+      flash[:success] = '删除成功！'
+      redirect_to applies_path
+    else
+      redirect_to apply_path(@apply)
     end
   end
 

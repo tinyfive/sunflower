@@ -44,7 +44,7 @@ gem 'figaro'
 gem 'unicorn'
 gem 'ransack', '~> 1.8.3'
 gem 'bootstrap-datepicker-rails', '~> 1.7.1.1'
-
+gem 'paranoia', '~> 2.3.1'
 
 # deployment
 gem 'mina', '~> 1.0.6'

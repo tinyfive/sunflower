@@ -1,5 +1,4 @@
-.page-applies-create,
-.page-applies-new {
+.form-apply {
   .apply_patient_social_relations .nested-fields {
     padding: 20px 40px 20px 20px;
     background-color: #f6f6f6;
@@ -47,7 +46,7 @@
 .page-applies-index {
   .form-search {
     margin: 0 0 30px 0;
-    
+
     .keyword {
       width: 300px;
     }

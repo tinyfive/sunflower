@@ -9,14 +9,15 @@
   </head>
 
   <body class="<%= page_class %>">
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
     <% if user_signed_in? %>
       <%= render 'layouts/header' %>
       <div class="container-fluid">
         <div class="row">
           <%= render 'layouts/sidebar' %>
           <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            <% if flash[:success].present? %>
+              <p class="alert alert-success"><%= flash[:success] %></p>
+            <% end %>
             <%= yield %>
           </div>
         </div>

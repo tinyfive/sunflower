@@ -22,6 +22,8 @@
 #
 
 class Apply < ApplicationRecord
+  acts_as_paranoid
+
   ESTIMATE_DISCHARGE_START_YEAR = Date.today.year - 1
   ESTIMATE_DISCHARGE_END_YEAR = Date.today.year + 2
 

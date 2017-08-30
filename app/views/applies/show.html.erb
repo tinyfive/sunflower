@@ -1,4 +1,12 @@
 <div class="page-header">
+  <div class="pull-right">
+    <% if policy(@apply).edit? %>
+      <%= link_to t(:edit), edit_apply_path(@apply), class: 'btn btn-success' %>
+    <% end %>
+    <% if policy(@apply).destroy? %>
+      <%= link_to t(:destroy), apply_path(@apply), method: :delete, class: 'btn btn-danger', data: {confirm: '确定要删除该申请？'} %>
+    <% end %>
+  </div>
   <h1>申请单</h1>
 </div>
 <div class="panel panel-default">
@@ -62,7 +70,7 @@
     <li class="list-group-item"><span class="field-name"><%= Apply.human_attribute_name :once_applied_remark_short %></span><%= @apply.once_applied_remark %></li>
     <li class="list-group-item"><span class="field-name"><%= Apply.human_attribute_name :insured %></span><%= Apply.human_attribute_name("insured.#{@apply.insured}") %></li>
     <li class="list-group-item"><span class="field-name"><%= Apply.human_attribute_name :commercial_insured %></span><%= Apply.human_attribute_name("commercial_insured.#{@apply.commercial_insured}") %></li>
-    <li class="list-group-item"><span class="field-name"><%= Apply.human_attribute_name :hospital %></span><%= @apply.hospital.name %></li>
+    <li class="list-group-item"><span class="field-name"><%= Apply.human_attribute_name :hospital %></span><%= @apply.hospital&.name %></li>
     <li class="list-group-item"><span class="field-name"><%= Apply.human_attribute_name :expense_amount %></span><%= @apply.expense_amount %></li>
     <li class="list-group-item"><span class="field-name"><%= Apply.human_attribute_name :affordable_amount %></span><%= @apply.affordable_amount %></li>
     <li class="list-group-item"><span class="field-name"><%= Apply.human_attribute_name :hospital_advice_amount %></span><%= @apply.hospital_advice_amount %></li>
