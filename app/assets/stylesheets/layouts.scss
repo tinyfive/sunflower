@@ -22,3 +22,21 @@
     padding-left: 40px;
   }
 }
+
+.pagination-container {
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  .pagination {
+    margin: 0;
+  }
+
+  .pagination-entries-info {
+    height: 34px;
+    line-height: 34px;
+  }
+
+  .pagination-paginate {
+    text-align: right;
+  }
+}

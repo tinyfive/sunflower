@@ -1,7 +1,7 @@
 <tr>
   <td><%= apply.patient.name %></td>
-  <td><%= l apply.created_at, format: '%Y-%m-%d' %></td>
   <td><%= apply.hospital_name %></td>
+  <td><%= l apply.created_at.to_date %></td>
   <td><%= l apply.estimate_discharge_at %></td>
   <td class="text-right">
     <% if policy(apply).show? %>

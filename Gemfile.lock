@@ -89,6 +89,7 @@ GEM
       railties (>= 4.1.0, < 5.2)
       responders
       warden (~> 1.2.3)
+    devise-i18n (1.2.0)
     erubis (2.7.0)
     execjs (2.7.0)
     ffi (1.9.18)
@@ -116,6 +117,9 @@ GEM
       activerecord
       kaminari-core (= 1.0.1)
     kaminari-core (1.0.1)
+    kaminari-i18n (0.4.0)
+      kaminari
+      rails
     kgio (2.10.0)
     libv8 (3.16.14.19)
     listen (3.0.8)
@@ -269,9 +273,12 @@ DEPENDENCIES
   cocoon (~> 1.2.10)
   coffee-rails (~> 4.2)
   devise (~> 4.3)
+  devise-i18n
   figaro
   jbuilder (~> 2.5)
   jquery-rails
+  kaminari (~> 1.0.1)
+  kaminari-i18n (~> 0.4.0)
   listen (~> 3.0.5)
   mina (~> 1.0.6)
   mina-unicorn (~> 1.0.1)

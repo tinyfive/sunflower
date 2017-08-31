@@ -29,7 +29,7 @@
       <% %i[name].each do |field| %>
         <th><%= Patient.human_attribute_name field %></th>
       <% end %>
-      <% %i[created_at hospital estimate_discharge_at].each do |field| %>
+      <% %i[hospital created_at estimate_discharge_at].each do |field| %>
         <th><%= Apply.human_attribute_name field %></th>
       <% end %>
       <th class="text-right"></th>
@@ -38,4 +38,14 @@
   <tbody>
     <%= render partial: 'apply', collection: @applies %>
   </tbody>
+
 </table>
+
+<div class="pagination-container row">
+  <div class="col-sm-6 pagination-entries-info">
+    <%= page_entries_info @applies %>
+  </div>
+  <div class="col-sm-6 pagination-paginate">
+    <%= paginate @applies %>
+  </div>
+</div>

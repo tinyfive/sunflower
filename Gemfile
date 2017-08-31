@@ -38,6 +38,7 @@ gem 'devise', '~> 4.3'
 gem 'administrate'
 gem 'simple_form'
 gem 'rails-i18n'
+gem 'devise-i18n'
 gem 'pundit'
 gem 'cocoon', '~> 1.2.10'
 gem 'figaro'
@@ -45,6 +46,9 @@ gem 'unicorn'
 gem 'ransack', '~> 1.8.3'
 gem 'bootstrap-datepicker-rails', '~> 1.7.1.1'
 gem 'paranoia', '~> 2.3.1'
+gem 'kaminari', '~> 1.0.1'
+gem 'kaminari-i18n', '~> 0.4.0'
+
 
 # deployment
 gem 'mina', '~> 1.0.6'
