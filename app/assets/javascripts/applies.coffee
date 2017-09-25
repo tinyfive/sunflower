@@ -1,3 +1,8 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+$(document).on 'click', '.form-apply .btn-submit, .form-apply .btn-draft', (e) ->
+  $btn = $ e.target
+  $form = $btn.closest 'form'
+
+  $field = $form.find ':input[name$="[status]"]'
+  $field.val $btn.data('status')
+
+  $form.submit()

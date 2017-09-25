@@ -72,9 +72,8 @@ class AppliesController < ApplicationController
   private
 
   def load_applies
-    # TODO: policy_scope
     @q = Apply.ransack(params[:q])
-    @applies = @q.result.includes(:patient, :hospital).page(params[:page])
+    @applies = policy_scope(@q.result).includes(:patient, :hospital).page(params[:page])
   end
 
   def load_apply
@@ -89,7 +88,7 @@ class AppliesController < ApplicationController
 
   def permit_params
     params.fetch(:apply, {}).permit [
-      :archive_number, :once_applied, :once_applied_remark, :insured,
+      :status, :disease_id, :archive_number, :once_applied, :once_applied_remark, :insured,
       :commercial_insured, :hospital_id, :expense_amount, :affordable_amount,
       :hospital_advice_amount, :estimate_discharge_at, :reason,
       patient_attributes: [

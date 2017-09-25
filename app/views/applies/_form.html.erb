@@ -23,6 +23,7 @@
   <% end %>
 
   <%= field_set_tag t('.fieldset.apply') do %>
+    <%= f.association :disease, include_blank: true, prompt: Disease.model_name.human %>
     <%= f.input :once_applied, wrapper: :horizontal_input_group do %>
       <div class="input-group-addon">
         <%= f.input_field :once_applied, label: false, boolean_style: :inline %>
@@ -52,11 +53,14 @@
     <% end %>
     <%= f.input :estimate_discharge_at, start_year: Apply::ESTIMATE_DISCHARGE_START_YEAR, end_year: Apply::ESTIMATE_DISCHARGE_END_YEAR %>
     <%= f.input :reason %>
+    <%= f.input :status, as: :hidden %>
   <% end %>
 
   <div class="form-group">
     <div class="col-sm-offset-3 col-sm-9 col-md-10 col-md-offset-2">
-      <%= f.button :submit, class: 'btn-primary btn-lg' %>
+      <button type="button" class="btn btn-primary btn-submit" data-status="submitted"><%= t :submit %></button>
+      <button type="button" class="btn btn-default btn-draft" data-status="draft"><%= t :save_as_draft %></button>
+      <%= link_to t(:cancel), 'javascript:history.back();', class: 'btn btn-link' %>
     </div>
   </div>
 <% end %>

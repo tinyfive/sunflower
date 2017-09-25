@@ -16,6 +16,7 @@ class UserDashboard < Administrate::BaseDashboard
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
     email: Field::String,
+    password: Field::String,
     encrypted_password: Field::String,
     reset_password_token: Field::String,
     reset_password_sent_at: Field::DateTime,
@@ -35,6 +36,7 @@ class UserDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :organization,
     :id,
+    :role,
     :name,
     :mobile,
   ].freeze
@@ -70,6 +72,7 @@ class UserDashboard < Administrate::BaseDashboard
     :mobile,
     :role,
     :email,
+    :password
     # :encrypted_password,
     # :reset_password_token,
     # :reset_password_sent_at,

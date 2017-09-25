@@ -1,0 +1,18 @@
+<%= simple_form_for approval, url: (approval.new_record? ? apply_approvals_path(approval.apply) : nil), html: {class: 'form form-horizontal form-approve'},
+  wrapper: :horizontal_form do |f| %>
+
+  <%= f.input :category, as: :hidden, value: current_user.organization.category %>
+  <%= f.input :status, as: :radio_buttons, wrapper: :horizontal_radio_and_checkboxes, collection: enum_options_for_select(Approval, :status) %>
+  <%= f.input :remark, as: :text %>
+  <%= f.input :aid_amount, wrapper: :horizontal_input_group do %>
+    <span class="input-group-addon">&yen;</span>
+    <%= f.input_field :aid_amount, class: 'form-control' %>
+  <% end %>
+
+  <div class="form-group">
+    <div class="col-sm-offset-3 col-sm-9 col-md-10 col-md-offset-2">
+      <%= f.button :button, class: 'btn-primary' %>
+      <%= link_to t(:cancel), 'javascript:history.back();', class: 'btn btn-link' %>
+    </div>
+  </div>
+<% end %>

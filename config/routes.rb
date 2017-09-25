@@ -9,5 +9,7 @@ Rails.application.routes.draw do
 
   devise_for :users
   root 'home#show'
-  resources :applies
+  resources :applies do
+    resources :approvals, only: %i[create]
+  end
 end

@@ -1,0 +1,21 @@
+<div class="approval panel panel-<%= approval.passed? ? 'success' : 'danger' %>">
+  <div class="panel-heading">
+    <%= Approval.human_attribute_name("category.#{approval.category}") %>
+  </div>
+  <ul class="list-group">
+    <li class="list-group-item">
+      <span class="field-name"><%= Approval.human_attribute_name :status %></span>
+      <%= Approval.human_attribute_name("status.#{approval.status}") %>
+    </li>
+    <li class="list-group-item">
+      <span class="field-name"><%= Approval.human_attribute_name :remark %></span>
+      <%= approval.remark %>
+    </li>
+    <% if approval.passed? %>
+      <li class="list-group-item">
+        <span class="field-name"><%= Approval.human_attribute_name :aid_amount %></span>
+        <%= approval.aid_amount %>
+      </li>
+    <% end %>
+  </ul>
+</div>

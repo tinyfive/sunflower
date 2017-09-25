@@ -30,4 +30,7 @@ class User < ApplicationRecord
   enum role: { super: 0, admin: 1, normal: 2 }
 
   belongs_to :organization
+  delegate :hospital?, :volunteer?, :radio?, :fund?, to: :organization
+
+  validates_presence_of :organization
 end

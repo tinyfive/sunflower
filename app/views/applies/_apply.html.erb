@@ -1,8 +1,14 @@
 <tr>
   <td><%= apply.patient.name %></td>
+  <td><%= apply.disease.name %></td>
   <td><%= apply.hospital_name %></td>
   <td><%= l apply.created_at.to_date %></td>
   <td><%= l apply.estimate_discharge_at %></td>
+  <td>
+    <span class="text-<%= apply_status_color(apply) %>">
+      <%= Apply.human_attribute_name("status.#{apply.status}") %>
+    </span>
+  </td>
   <td class="text-right">
     <% if policy(apply).show? %>
       <%= link_to t(:show), apply_path(apply) %>

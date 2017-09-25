@@ -1,0 +1,19 @@
+zh-CN:
+  activerecord:
+    models:
+      approval: 审核
+    attributes:
+      approval:
+        creator: 审核人
+        creator_id: 审核人
+        remark: 审核意见
+        status: 审核结果
+        category: 类型
+        aid_amount: 同意金额
+      approval/category:
+        volunteer: 志愿者调查意见
+        radio: 电台意见
+        fund: 青基会意见
+      approval/status:
+        passed: 通过
+        rejected: 拒绝

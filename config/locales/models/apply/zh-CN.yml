@@ -12,6 +12,8 @@ zh-CN:
         status: 状态
         insured: 有医保
         commercial_insured: 有商业保险
+        disease: 疾病
+        disease_id: 疾病
         hospital: 医院
         hospital_id: 医院
         expense_amount: 预计总费用
@@ -35,3 +37,10 @@ zh-CN:
       apply/commercial_insured:
         'true': 有
         'false': 没有
+      apply/status:
+        draft: 未提交
+        submitted: 已提交
+        volunteer_approved: 向阳花已通过
+        radio_approved: 电台已通过
+        fund_approved: 青基会已通过
+        rejected: 未通过

@@ -66,6 +66,7 @@
     申请情况
   </div>
   <ul class="list-group">
+    <li class="list-group-item"><span class="field-name"><%= Apply.human_attribute_name :disease %></span><%= @apply.disease.name %></li>
     <li class="list-group-item"><span class="field-name"><%= Apply.human_attribute_name :once_applied %></span><%= Apply.human_attribute_name("once_applied.#{@apply.once_applied}") %></li>
     <li class="list-group-item"><span class="field-name"><%= Apply.human_attribute_name :once_applied_remark_short %></span><%= @apply.once_applied_remark %></li>
     <li class="list-group-item"><span class="field-name"><%= Apply.human_attribute_name :insured %></span><%= Apply.human_attribute_name("insured.#{@apply.insured}") %></li>
@@ -78,3 +79,9 @@
     <li class="list-group-item"><span class="field-name"><%= Apply.human_attribute_name :reason %></span><%= @apply.reason %></li>
   </ul>
 </div>
+
+<%= render partial: 'approvals/approval', collection: @apply.approvals %>
+
+<% if policy(@apply).approve? %>
+  <%= render 'approvals/form', approval: @apply.approvals.build(creator: current_user, category: current_user.organization.category) %>
+<% end %>

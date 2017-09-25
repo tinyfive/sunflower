@@ -27,15 +27,18 @@ class Apply < ApplicationRecord
   ESTIMATE_DISCHARGE_START_YEAR = Date.today.year - 1
   ESTIMATE_DISCHARGE_END_YEAR = Date.today.year + 2
 
+  enum status: { draft: 0, submitted: 1, volunteer_approved: 2, radio_approved: 3, fund_approved: 4, rejected: 9 }
+
   belongs_to :patient
   belongs_to :hospital, -> { where(category: :hospital) }, foreign_key: :hospital_id, class_name: Organization.name
-  has_many :approves
+  belongs_to :disease
+  has_many :approvals
 
   accepts_nested_attributes_for :patient, allow_destroy: false, limit: 1
 
   delegate :name, to: :hospital, prefix: true, allow_nil: true
 
-  validates_presence_of :patient, :hospital
+  validates_presence_of :patient, :hospital, :disease
 
   ransacker :created_at, type: :date do
     Arel.sql('date(created_at)')

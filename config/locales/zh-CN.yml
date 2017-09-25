@@ -6,6 +6,9 @@ zh-CN:
   show: 查看
   edit: 编辑
   destroy: 删除
+  cancel: 取消
+  submit: 保存并提交审核
+  save_as_draft: 保存为草稿
 
   layouts:
     sidebar:

@@ -22,4 +22,12 @@
 #
 
 module AppliesHelper
+  def apply_status_color(apply)
+    case apply.status
+    when 'draft' then 'default'
+    when 'fund_approved' then 'success'
+    when 'rejected' then 'danger'
+    else 'warning'
+    end
+  end
 end

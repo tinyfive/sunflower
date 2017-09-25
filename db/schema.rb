@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170830042648) do
+ActiveRecord::Schema.define(version: 20170925003133) do
 
   create_table "applies", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "patient_id"
+    t.integer  "disease_id"
     t.integer  "creator_id"
     t.integer  "archive_number"
-    t.integer  "status"
+    t.integer  "status",                                              default: 0, null: false
     t.boolean  "insured"
     t.boolean  "commercial_insured"
     t.integer  "hospital_id"
@@ -27,18 +28,23 @@ ActiveRecord::Schema.define(version: 20170830042648) do
     t.text     "reason",                 limit: 65535
     t.boolean  "once_applied"
     t.string   "once_applied_remark"
-    t.datetime "created_at",                                          null: false
-    t.datetime "updated_at",                                          null: false
+    t.datetime "created_at",                                                      null: false
+    t.datetime "updated_at",                                                      null: false
     t.datetime "deleted_at"
     t.index ["deleted_at"], name: "index_applies_on_deleted_at", using: :btree
+    t.index ["disease_id"], name: "index_applies_on_disease_id", using: :btree
   end
 
-  create_table "approves", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "approvals", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "creator_id"
+    t.integer  "status",                                  default: 0, null: false
+    t.integer  "apply_id",                                            null: false
+    t.integer  "category",                                default: 0, null: false
     t.text     "remark",     limit: 65535
     t.decimal  "aid_amount",               precision: 10
-    t.datetime "created_at",                              null: false
-    t.datetime "updated_at",                              null: false
+    t.datetime "created_at",                                          null: false
+    t.datetime "updated_at",                                          null: false
+    t.index ["apply_id"], name: "index_approvals_on_apply_id", using: :btree
   end
 
   create_table "diseases", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -106,4 +112,6 @@ ActiveRecord::Schema.define(version: 20170830042648) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "applies", "diseases"
+  add_foreign_key "approvals", "applies"
 end
